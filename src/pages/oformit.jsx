@@ -6,7 +6,15 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 function OformitPage() {
-  const [border, setBorder] = useState(['no_border', 'no_border', 'no_border', 'no_border'])
+  const [border, setBorder] = useState([
+    "no_border",
+    "no_border",
+    "no_border",
+    "no_border",
+  ]);
+  const [alert, setAlert] = useState("gray_input");
+  const [alertName, setAlertName] = useState("gray_input");
+  const [alertLastName, setAlertLastName] = useState("gray_input");
   const handle_submit = (event) => {
     event.preventDefault();
     let last_name = event.target.last_name.value;
@@ -19,6 +27,9 @@ function OformitPage() {
     window.GlobalDetails = result;
     console.log(result);
     navigate("/copy");
+  };
+  const validate = (value, regex) => {
+    return Array.from(value.matchAll(regex));
   };
   const tg = window.Telegram.WebApp;
   const backButton = tg.BackButton;
@@ -37,24 +48,55 @@ function OformitPage() {
         <form onSubmit={handle_submit}>
           <input
             placeholder="Фамилия"
-            className="gray_input"
+            className={alertLastName}
             type="text"
             name="last_name"
             id="track_input"
+            onChange={(event) => {
+              if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
+                setAlertLastName("gray_input alert");
+              } else if (
+                validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
+              ) {
+                setAlertLastName("gray_input");
+              }
+            }}
           />
           <input
             placeholder="Имя"
-            className="gray_input"
+            className={alertName}
             type="text"
             name="first_name"
             id="track_input"
+            onChange={(event) => {
+              if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
+                setAlertName("gray_input alert");
+              } else if (
+                validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
+              ) {
+                setAlertName("gray_input");
+              }
+            }}
           />
           <input
             placeholder="Телефон"
-            className="gray_input"
+            className={alert}
             type="text"
             name="phone"
             id="track_input"
+            onChange={(event) => {
+              if (
+                validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
+                  .length == 0
+              ) {
+                setAlert("gray_input alert");
+              } else if (
+                validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
+                  .length != 0
+              ) {
+                setAlert("gray_input");
+              }
+            }}
           />
           <div id="select_post">
             <Swiper slidesPerView={3} modules={[FreeMode]}>
@@ -64,7 +106,13 @@ function OformitPage() {
                   className={border[0]}
                   onClick={() => {
                     console.log(border);
-                    if (border[0] != 'border') setBorder(['border', 'no_border', 'no_border', 'no_border'])
+                    if (border[0] != "border")
+                      setBorder([
+                        "border",
+                        "no_border",
+                        "no_border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>СДЭК</p>
@@ -76,7 +124,13 @@ function OformitPage() {
                   className={border[1]}
                   onClick={() => {
                     console.log(border);
-                    if (border[1] != 'border') setBorder(['no_border', 'border', 'no_border', 'no_border'])
+                    if (border[1] != "border")
+                      setBorder([
+                        "no_border",
+                        "border",
+                        "no_border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>Почта РФ</p>
@@ -87,7 +141,13 @@ function OformitPage() {
                   id="cdek"
                   className={border[2]}
                   onClick={() => {
-                    if (border[2] != 'border') setBorder(['no_border', 'no_border', 'border', 'no_border'])
+                    if (border[2] != "border")
+                      setBorder([
+                        "no_border",
+                        "no_border",
+                        "border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>БелПочта</p>
@@ -98,7 +158,13 @@ function OformitPage() {
                   id="cdek"
                   className={border[3]}
                   onClick={() => {
-                    if (border[3] != 'border') setBorder(['no_border', 'no_border', 'no_border', 'border'])
+                    if (border[3] != "border")
+                      setBorder([
+                        "no_border",
+                        "no_border",
+                        "no_border",
+                        "border",
+                      ]);
                   }}
                 >
                   <p>Международная доставкаф</p>

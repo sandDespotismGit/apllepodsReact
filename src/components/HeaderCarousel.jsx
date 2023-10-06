@@ -32,7 +32,7 @@ function HeaderCarousel() {
   }, []);
   return (
     <div className="header_message_carousel">
-      <Swiper slidesPerView={1} modules={[FreeMode]}>
+      <Swiper modules={[FreeMode]} freeMode={true}>
         {message}
       </Swiper>
     </div>

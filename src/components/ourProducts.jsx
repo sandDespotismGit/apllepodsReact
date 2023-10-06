@@ -59,93 +59,6 @@ function OurProducts() {
         <div class="product">
           <div class="product_logo">
             <svg
-              width="33"
-              height="32"
-              viewBox="0 0 33 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22.2402 12.5333L10.2402 5.61328"
-                stroke="url(#paint0_linear_128_3763)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M28.2402 21.3334V10.6667C28.2398 10.1991 28.1163 9.73978 27.8823 9.33492C27.6483 8.93005 27.3119 8.59385 26.9069 8.36003L17.5736 3.0267C17.1682 2.79265 16.7083 2.66943 16.2402 2.66943C15.7721 2.66943 15.3123 2.79265 14.9069 3.0267L5.57357 8.36003C5.16858 8.59385 4.83221 8.93005 4.59818 9.33492C4.36416 9.73978 4.24071 10.1991 4.24023 10.6667V21.3334C4.24071 21.801 4.36416 22.2603 4.59818 22.6651C4.83221 23.07 5.16858 23.4062 5.57357 23.64L14.9069 28.9734C15.3123 29.2074 15.7721 29.3306 16.2402 29.3306C16.7083 29.3306 17.1682 29.2074 17.5736 28.9734L26.9069 23.64C27.3119 23.4062 27.6483 23.07 27.8823 22.6651C28.1163 22.2603 28.2398 21.801 28.2402 21.3334Z"
-                stroke="url(#paint1_linear_128_3763)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4.6001 9.28003L16.2401 16.0134L27.8801 9.28003"
-                stroke="url(#paint2_linear_128_3763)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M16.2402 29.44V16"
-                stroke="url(#paint3_linear_128_3763)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_128_3763"
-                  x1="9.79455"
-                  y1="5.61328"
-                  x2="22.7829"
-                  y2="6.85435"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F5EA99" />
-                  <stop offset="1" stop-color="#DB9B45" />
-                </linearGradient>
-                <linearGradient
-                  id="paint1_linear_128_3763"
-                  x1="3.34887"
-                  y1="2.66943"
-                  x2="29.4983"
-                  y2="3.9665"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F5EA99" />
-                  <stop offset="1" stop-color="#DB9B45" />
-                </linearGradient>
-                <linearGradient
-                  id="paint2_linear_128_3763"
-                  x1="3.73547"
-                  y1="9.28003"
-                  x2="28.2723"
-                  y2="13.9546"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F5EA99" />
-                  <stop offset="1" stop-color="#DB9B45" />
-                </linearGradient>
-                <linearGradient
-                  id="paint3_linear_128_3763"
-                  x1="16.2031"
-                  y1="16"
-                  x2="17.2953"
-                  y2="16.0045"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F5EA99" />
-                  <stop offset="1" stop-color="#DB9B45" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <p class="product_description_golden">Аксессуары</p>
-        </div>
-        <div class="product">
-          <div class="product_logo">
-            <svg
               width="23"
               height="30"
               viewBox="0 0 23 30"
@@ -229,6 +142,93 @@ function OurProducts() {
             </svg>
           </div>
           <p class="product_description_golden">Часы</p>
+        </div>
+        <div class="product">
+          <div class="product_logo">
+            <svg
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.2402 12.5333L10.2402 5.61328"
+                stroke="url(#paint0_linear_128_3763)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M28.2402 21.3334V10.6667C28.2398 10.1991 28.1163 9.73978 27.8823 9.33492C27.6483 8.93005 27.3119 8.59385 26.9069 8.36003L17.5736 3.0267C17.1682 2.79265 16.7083 2.66943 16.2402 2.66943C15.7721 2.66943 15.3123 2.79265 14.9069 3.0267L5.57357 8.36003C5.16858 8.59385 4.83221 8.93005 4.59818 9.33492C4.36416 9.73978 4.24071 10.1991 4.24023 10.6667V21.3334C4.24071 21.801 4.36416 22.2603 4.59818 22.6651C4.83221 23.07 5.16858 23.4062 5.57357 23.64L14.9069 28.9734C15.3123 29.2074 15.7721 29.3306 16.2402 29.3306C16.7083 29.3306 17.1682 29.2074 17.5736 28.9734L26.9069 23.64C27.3119 23.4062 27.6483 23.07 27.8823 22.6651C28.1163 22.2603 28.2398 21.801 28.2402 21.3334Z"
+                stroke="url(#paint1_linear_128_3763)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.6001 9.28003L16.2401 16.0134L27.8801 9.28003"
+                stroke="url(#paint2_linear_128_3763)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.2402 29.44V16"
+                stroke="url(#paint3_linear_128_3763)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_128_3763"
+                  x1="9.79455"
+                  y1="5.61328"
+                  x2="22.7829"
+                  y2="6.85435"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#F5EA99" />
+                  <stop offset="1" stop-color="#DB9B45" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_128_3763"
+                  x1="3.34887"
+                  y1="2.66943"
+                  x2="29.4983"
+                  y2="3.9665"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#F5EA99" />
+                  <stop offset="1" stop-color="#DB9B45" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_128_3763"
+                  x1="3.73547"
+                  y1="9.28003"
+                  x2="28.2723"
+                  y2="13.9546"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#F5EA99" />
+                  <stop offset="1" stop-color="#DB9B45" />
+                </linearGradient>
+                <linearGradient
+                  id="paint3_linear_128_3763"
+                  x1="16.2031"
+                  y1="16"
+                  x2="17.2953"
+                  y2="16.0045"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#F5EA99" />
+                  <stop offset="1" stop-color="#DB9B45" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <p class="product_description_golden">Аксессуары</p>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ function ProductCarousel() {
   return (
     <div>
       <div>
-        <Swiper slidesPerView={1} modules={[FreeMode]}>
+        <Swiper slidesPerView={1} modules={[FreeMode]} freeMode={true}>
           <SwiperSlide>
             <img className="product_img_carousel" src={carouselInfo[2][0]}></img>
           </SwiperSlide>

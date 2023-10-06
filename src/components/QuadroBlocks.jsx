@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router";
 function QuadroBlocks() {
+  const navigate = useNavigate();
   return (
     <div className="quadro_blocks_main">
       <div className="quadro_blocks" style={{ paddingLeft: "8px" }}>
+        <a href="#" onClick={() => navigate('/')}>
         <div className="gray_block">
           <div className="inner_arrow_text">
             <p>Доставка</p>
@@ -22,6 +25,7 @@ function QuadroBlocks() {
           </div>
           <p class="gray_block_description">Узнать, когда придет посылка</p>
         </div>
+        </a>
         <div className="gray_block">
           <div className="inner_arrow_text">
             <p>FAQ</p>

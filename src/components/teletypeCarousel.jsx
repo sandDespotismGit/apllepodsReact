@@ -8,7 +8,7 @@ function TeletypeCarousel() {
   return (
     <div id="teletype_carousel_div">
       <div></div>
-      <Swiper slidesPerView={width <= 400 ? 2 : 3} modules={[FreeMode]}>
+      <Swiper  modules={[FreeMode]} freeMode={true} slidesPerView={3}>
         <SwiperSlide>
           <div className="teletype_block">
             <div>
