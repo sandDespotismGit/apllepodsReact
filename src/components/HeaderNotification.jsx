@@ -4,11 +4,13 @@ function HeaderNotification() {
   return (
     <div className="header_notification">
       <p>
-        У вас есть незавершенный заказ. Нажмите, чтобы перейти к оформлению.
+        У вас есть незавершенный заказ. Нажмите на иконку, чтобы перейти к
+        оформлению.
       </p>
-      <div className="shopping_cart_icon" onClick={()=>{window.notification = true;navigate('/cart')}}>
-        
-      </div>
+      <div
+        className="shopping_cart_icon"
+        onClick={() => navigate("/cart")}
+      ></div>
     </div>
   );
 }

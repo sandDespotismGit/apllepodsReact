@@ -3,7 +3,7 @@ import "./index.css";
 import MainPage from "./pages/mainPage";
 import ProductPage from "./pages/productPage";
 import ShoppingCart from "./pages/shoppingCart";
-import OformitPage from "./pages/oformit";
+import OrderPage from "./pages/order";
 import CopyPage from "./pages/copyPage";
 import Tracking from "./pages/Tracking";
 import { ChakraBaseProvider } from "@chakra-ui/react";
@@ -18,26 +18,22 @@ const router = createMemoryRouter([
     element: <ProductPage />,
   },
   {
-    path: "/cart", 
-    element: <ShoppingCart/>
+    path: "/cart",
+    element: <ShoppingCart />,
   },
   {
-    path: "/oformit",
-    element: <OformitPage/>
+    path: "/order",
+    element: <OrderPage />,
   },
   {
     path: "/copy",
-    element: <CopyPage/>
-  }, 
-  {
-    path: "/tracking",
-    element: <Tracking/>
-  }
+    element: <CopyPage />,
+  },
 ]);
 function App() {
   return (
     <ChakraBaseProvider>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </ChakraBaseProvider>
   );
 }

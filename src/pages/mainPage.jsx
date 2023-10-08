@@ -10,8 +10,8 @@ import Products from "../components/products.jsx";
 function MainPage() {
   return (
     <div id="main">
-      <HeaderNotification/>
-      <HeaderCarousel /> 
+      <HeaderNotification />
+      <HeaderCarousel />
       <ProfileTgLink />
       <TeletypeCarousel />
       <QuadroBlocks />
