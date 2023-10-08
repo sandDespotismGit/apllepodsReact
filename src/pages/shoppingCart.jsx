@@ -11,8 +11,14 @@ function ShoppingCart() {
   const backButton = tg.BackButton;
   const navigate = useNavigate();
   function back_page() {
-    navigate("/product");
-    backButton.hide();
+    if (window.notification) {
+      window.notification = false;
+      navigate("/");
+      backButton.hide();
+    } else {
+      window.notification = false;
+      navigate("/product");
+    }
   }
   backButton.show();
   backButton.onClick(back_page);

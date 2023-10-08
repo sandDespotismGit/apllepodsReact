@@ -5,6 +5,7 @@ import ProductPage from "./pages/productPage";
 import ShoppingCart from "./pages/shoppingCart";
 import OformitPage from "./pages/oformit";
 import CopyPage from "./pages/copyPage";
+import Tracking from "./pages/Tracking";
 import { ChakraBaseProvider } from "@chakra-ui/react";
 window.GlobalShoppingCart = [];
 const router = createMemoryRouter([
@@ -27,6 +28,10 @@ const router = createMemoryRouter([
   {
     path: "/copy",
     element: <CopyPage/>
+  }, 
+  {
+    path: "/tracking",
+    element: <Tracking/>
   }
 ]);
 function App() {

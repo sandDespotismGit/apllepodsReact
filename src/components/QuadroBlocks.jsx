@@ -4,7 +4,7 @@ function QuadroBlocks() {
   return (
     <div className="quadro_blocks_main">
       <div className="quadro_blocks" style={{ paddingLeft: "8px" }}>
-        <a href="#" onClick={() => navigate('/')}>
+        <a href="#" onClick={() => navigate('/tracking')}>
         <div className="gray_block">
           <div className="inner_arrow_text">
             <p>Доставка</p>

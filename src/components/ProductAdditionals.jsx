@@ -89,7 +89,9 @@ function ProductAdditionals() {
       </div>
       <div id="functionality">
         <DropDown header='Комплектация' content={equipment}/>
+        <hr style={{width:'100%', borderColor:'var(--Gray, #4B4B4B)'}}></hr>
         <DropDown header='Функционал' content={functional}/>
+        <hr style={{width:'100%', borderColor:'var(--Gray, #4B4B4B)'}}></hr>
         <DropDown header='Технические характеристики' content={chars}/>
       </div>
     </div>

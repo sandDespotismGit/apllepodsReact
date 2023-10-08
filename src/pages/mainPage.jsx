@@ -6,7 +6,6 @@ import QuadroBlocks from "../components/QuadroBlocks.jsx";
 import OurProducts from "../components/ourProducts.jsx";
 import ReviewCarousel from "../components/reviewCarousel.jsx";
 import Products from "../components/products.jsx";
-import { color } from "framer-motion";
 
 function MainPage() {
   return (
