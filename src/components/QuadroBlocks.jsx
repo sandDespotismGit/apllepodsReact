@@ -1,6 +1,19 @@
 import { useNavigate } from "react-router";
+import { useState } from "react";
+import { useEffect } from "react";
 function QuadroBlocks() {
+  const [faqlink, setFaqLink] = useState('#')
   const navigate = useNavigate();
+  useEffect(() => {
+    fetch("https://pop.applepodsblack.ru/api/faqs")
+      .then((response) => response.json())
+      .then(function (commits) {
+        console.log(commits)
+        let data = commits;
+        
+        setFaqLink(data.data[0].attributes.link);
+      });
+  }, []);
   return (
     <div className="quadro_blocks_main">
       <div className="quadro_blocks" style={{ paddingLeft: "8px" }}>
@@ -26,6 +39,7 @@ function QuadroBlocks() {
           <p class="gray_block_description">Узнать, когда придет посылка</p>
         </div>
         </a>
+        <a href={faqlink}>
         <div className="gray_block">
           <div className="inner_arrow_text">
             <p>FAQ</p>
@@ -46,6 +60,7 @@ function QuadroBlocks() {
           </div>
           <p class="gray_block_description">Ответы на все вопросы</p>
         </div>
+        </a>
       </div>
       <div className="quadro_blocks" style={{ paddingRight: "8px" }}>
         <a href="https://t.me/archimolotok">
