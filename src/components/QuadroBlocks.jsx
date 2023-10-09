@@ -2,64 +2,64 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
 function QuadroBlocks() {
-  const [faqlink, setFaqLink] = useState('#')
+  const [faqlink, setFaqLink] = useState("#");
   const navigate = useNavigate();
   useEffect(() => {
     fetch("https://pop.applepodsblack.ru/api/faqs")
       .then((response) => response.json())
       .then(function (commits) {
-        console.log(commits)
+        console.log(commits);
         let data = commits;
-        
+
         setFaqLink(data.data[0].attributes.link);
       });
   }, []);
   return (
     <div className="quadro_blocks_main">
       <div className="quadro_blocks" style={{ paddingLeft: "8px" }}>
-        <a href="#" onClick={() => navigate('/tracking')}>
-        <div className="gray_block">
-          <div className="inner_arrow_text">
-            <p>Доставка</p>
-            <svg
-              width="17"
-              height="16"
-              viewBox="0 0 17 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.74023 13L11.3867 8.35355C11.5819 8.15829 11.5819 7.84171 11.3867 7.64645L6.74023 3"
-                stroke="#ECECEC"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+        <a href="#" onClick={() => navigate("/tracking")}>
+          <div className="gray_block">
+            <div className="inner_arrow_text">
+              <p>Доставка</p>
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.74023 13L11.3867 8.35355C11.5819 8.15829 11.5819 7.84171 11.3867 7.64645L6.74023 3"
+                  stroke="#ECECEC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <p class="gray_block_description">Узнать, когда придет посылка</p>
           </div>
-          <p class="gray_block_description">Узнать, когда придет посылка</p>
-        </div>
         </a>
         <a href={faqlink}>
-        <div className="gray_block">
-          <div className="inner_arrow_text">
-            <p>FAQ</p>
-            <svg
-              width="17"
-              height="16"
-              viewBox="0 0 17 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.74023 13L11.3867 8.35355C11.5819 8.15829 11.5819 7.84171 11.3867 7.64645L6.74023 3"
-                stroke="#ECECEC"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
+          <div className="gray_block">
+            <div className="inner_arrow_text">
+              <p>FAQ</p>
+              <svg
+                width="17"
+                height="16"
+                viewBox="0 0 17 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.74023 13L11.3867 8.35355C11.5819 8.15829 11.5819 7.84171 11.3867 7.64645L6.74023 3"
+                  stroke="#ECECEC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <p class="gray_block_description">Ответы на все вопросы</p>
           </div>
-          <p class="gray_block_description">Ответы на все вопросы</p>
-        </div>
         </a>
       </div>
       <div className="quadro_blocks" style={{ paddingRight: "8px" }}>
@@ -110,9 +110,9 @@ function QuadroBlocks() {
               />
             </svg>
           </div>
-          <div id="cart_block_bottom">
+          <div id="cart_block_bottom" onClick={() => navigate("/cart")}>
             <div class="shopping_cart_icon"></div>
-            <p id="cart_block_amount">2</p>
+            <p id="cart_block_amount">0</p>
             <p class="sale">-5%</p>
           </div>
         </div>

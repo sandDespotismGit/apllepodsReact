@@ -6,7 +6,12 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 function OformitPage() {
-  const [border, setBorder] = useState(['no_border', 'no_border', 'no_border', 'no_border'])
+  const [border, setBorder] = useState([
+    "no_border",
+    "no_border",
+    "no_border",
+    "no_border",
+  ]);
   const handle_submit = (event) => {
     event.preventDefault();
     let last_name = event.target.last_name.value;
@@ -33,7 +38,6 @@ function OformitPage() {
     <div id="oformit_main">
       <p id="oformit_header">Оформление заказа</p>
       <div id="oformit_form_div">
-        <p>оформление заказа</p>
         <form onSubmit={handle_submit}>
           <input
             placeholder="Фамилия"
@@ -64,7 +68,13 @@ function OformitPage() {
                   className={border[0]}
                   onClick={() => {
                     console.log(border);
-                    if (border[0] != 'border') setBorder(['border', 'no_border', 'no_border', 'no_border'])
+                    if (border[0] != "border")
+                      setBorder([
+                        "border",
+                        "no_border",
+                        "no_border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>СДЭК</p>
@@ -76,7 +86,13 @@ function OformitPage() {
                   className={border[1]}
                   onClick={() => {
                     console.log(border);
-                    if (border[1] != 'border') setBorder(['no_border', 'border', 'no_border', 'no_border'])
+                    if (border[1] != "border")
+                      setBorder([
+                        "no_border",
+                        "border",
+                        "no_border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>Почта РФ</p>
@@ -87,7 +103,13 @@ function OformitPage() {
                   id="cdek"
                   className={border[2]}
                   onClick={() => {
-                    if (border[2] != 'border') setBorder(['no_border', 'no_border', 'border', 'no_border'])
+                    if (border[2] != "border")
+                      setBorder([
+                        "no_border",
+                        "no_border",
+                        "border",
+                        "no_border",
+                      ]);
                   }}
                 >
                   <p>БелПочта</p>
@@ -98,7 +120,13 @@ function OformitPage() {
                   id="cdek"
                   className={border[3]}
                   onClick={() => {
-                    if (border[3] != 'border') setBorder(['no_border', 'no_border', 'no_border', 'border'])
+                    if (border[3] != "border")
+                      setBorder([
+                        "no_border",
+                        "no_border",
+                        "no_border",
+                        "border",
+                      ]);
                   }}
                 >
                   <p>Международная доставкаф</p>

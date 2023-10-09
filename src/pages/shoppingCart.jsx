@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import delete_cart from "./../images/delete_cart.svg";
-import profile_test from "./../images/profile_test.jpg";
+
 function ShoppingCart() {
   const [cart, setCart] = useState("");
   const [summary, setSummary] = useState(0);
@@ -114,7 +114,7 @@ function ShoppingCart() {
         </div>
       </div>
       <div style={{ padding: "16px" }}>
-        <Link to={"/oformit"} onClick={() => (window.GlobalSum = summary)}>
+        <Link to={"/order"} onClick={() => (window.GlobalSum = summary)}>
           <button className="gold_button" style={{ width: "100%" }}>
             Оформить заказ
           </button>

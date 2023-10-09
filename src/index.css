@@ -43,6 +43,20 @@
   border-radius: 0px 0px 16px 16px;
   background: var(--gray-04-dark, #3a3a3c);
 }
+
+.main_tracking {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 35% 10px;
+}
+
+.main_tracking p,
+h1 {
+  color: white;
+}
+
 .header_notification > p {
   color: var(--White, #ececec);
 
@@ -956,6 +970,13 @@
 .card_info > a > button {
   width: 100%;
 }
+
+.button__track {
+  border: 2px solid #f5ea99;
+  border-radius: 15px;
+  padding: 10px;
+}
+
 .card_description {
   color: var(--White, #ececec);
 
@@ -1069,6 +1090,11 @@
     linear-gradient(302deg, #1c1c1e 0%, #48484a 100%)
   );
 }
+
+.cart_card img {
+  object-fit: cover;
+}
+
 .info_cart_card {
   display: flex;
   padding: 0px 8px 8px 8px;
@@ -1153,7 +1179,8 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-  min-height: 1080px;
+  min-height: 100vh;
+  justify-content: center;
 }
 .gray_input {
   padding: 11px 16px 11px 0px;

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
 function Tracking() {
   const [tracking, setTracking] = useState("");
-  function handle(str, e){
+  function handle(str, e) {
     console.log(e);
     alert(str);
   }
@@ -19,7 +18,9 @@ function Tracking() {
         <div className="track_info">
           <p className="track_info_header">Заказ номер {trackNum}</p>
           <p className="track_info_addrstate">Адрес доставки:</p>
-          <p className="track_info_state">{track.data.destinationPostalAddress}</p>
+          <p className="track_info_state">
+            {track.data.destinationPostalAddress}
+          </p>
           <p className="track_info_addrstate">Текущий статус:</p>
           <p className="track_info_state">
             $
@@ -31,20 +32,30 @@ function Tracking() {
         </div>
       );
     } else {
-      setTracking('Ошибка')
+      setTracking("Ошибка");
     }
   }
   return (
     <div id="main_tracking">
       <div class="dostavka_content">
-        <div>
-          <p id="dostavka_header">Доставка</p>
+        <div className="main_tracking">
+          <h1
+            id="dostavka_header"
+            style={{ fontSize: "24px", textAlign: "center" }}
+          >
+            Доставка
+          </h1>
           <p id="advance_help">
             Введите трек-номер , чтобы узнать статус доставки.
           </p>
           <form
             name="tracking"
-            onsubmit={(event) => getTrack(document.forms.tracking.elements.track_input.value, event)}
+            onsubmit={(event) =>
+              getTrack(
+                document.forms.tracking.elements.track_input.value,
+                event
+              )
+            }
           >
             <input
               placeholder="Введите код"
@@ -54,9 +65,24 @@ function Tracking() {
               id="track_input"
             />
           </form>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              paddingTop: "10px",
+            }}
+          >
+            <p
+              style={{ color: "white" }}
+              onClick={(event) => handle("", event)}
+              className="button__track"
+            >
+              Отправить
+            </p>
+          </div>
         </div>
         {tracking}
-        <p onClick={(event) => handle('asas', event)}>бля</p>
       </div>
     </div>
   );
