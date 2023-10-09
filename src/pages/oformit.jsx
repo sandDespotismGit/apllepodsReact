@@ -52,15 +52,16 @@ function OformitPage() {
             type="text"
             name="last_name"
             id="track_input"
-            onChange={(event) => {
-              if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
-                setAlertLastName("gray_input alert");
-              } else if (
-                validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
-              ) {
-                setAlertLastName("gray_input");
-              }
-            }}
+            pattern=" /^[a-z ,.'-]+$/g"
+            // onChange={(event) => {
+            //   if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
+            //     setAlertLastName("gray_input alert");
+            //   } else if (
+            //     validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
+            //   ) {
+            //     setAlertLastName("gray_input");
+            //   }
+            // }}
           />
           <input
             placeholder="Имя"
@@ -68,15 +69,16 @@ function OformitPage() {
             type="text"
             name="first_name"
             id="track_input"
-            onChange={(event) => {
-              if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
-                setAlertName("gray_input alert");
-              } else if (
-                validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
-              ) {
-                setAlertName("gray_input");
-              }
-            }}
+            pattern="/^[a-z ,.'-]+$/g"
+            // onChange={(event) => {
+            //   if (validate(event.target.value, /^[a-z ,.'-]+$/g).length == 0) {
+            //     setAlertName("gray_input alert");
+            //   } else if (
+            //     validate(event.target.value, /^[a-z ,.'-]+$/g).length != 0
+            //   ) {
+            //     setAlertName("gray_input");
+            //   }
+            // }}
           />
           <input
             placeholder="Телефон"
@@ -84,19 +86,20 @@ function OformitPage() {
             type="text"
             name="phone"
             id="track_input"
-            onChange={(event) => {
-              if (
-                validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
-                  .length == 0
-              ) {
-                setAlert("gray_input alert");
-              } else if (
-                validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
-                  .length != 0
-              ) {
-                setAlert("gray_input");
-              }
-            }}
+            pattern="/(?:\+|\d)[\d\-\(\) ]{9,}\d/g"
+            // onChange={(event) => {
+            //   if (
+            //     validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
+            //       .length == 0
+            //   ) {
+            //     setAlert("gray_input alert");
+            //   } else if (
+            //     validate(event.target.value, /(?:\+|\d)[\d\-\(\) ]{9,}\d/g)
+            //       .length != 0
+            //   ) {
+            //     setAlert("gray_input");
+            //   }
+            // }}
           />
           <div id="select_post">
             <Swiper slidesPerView={3} modules={[FreeMode]}>

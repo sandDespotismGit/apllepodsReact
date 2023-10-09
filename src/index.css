@@ -1337,3 +1337,31 @@ h1 {
 .alert > p {
   border-color: red;
 }
+.review_images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.review_images > img {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-right: 8px;
+}
+.review_avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+.review_date {
+  color: var(--label-color-dark-secondary, rgba(235, 235, 245, 0.6));
+  text-align: center;
+
+  /* Default/Regular/Footnote */
+  font-family: SF Pro Text;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 138.462% */
+  letter-spacing: -0.078px;
+}

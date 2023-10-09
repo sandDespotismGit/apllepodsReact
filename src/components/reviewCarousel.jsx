@@ -1,4 +1,5 @@
-import { SwiperSlide } from "swiper/react";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { FreeMode } from "swiper/modules";
 import { useState } from "react";
 import { useEffect } from "react";
 import "swiper/css";
@@ -39,7 +40,7 @@ function ReviewCarousel() {
             <SwiperSlide>
               <div className="review">
                 <div className="review_header">
-                  <div style={{ display: "flex", flexDirection: "row" }}>
+                  <div style={{ display: "flex", flexDirection: "row", alignItems: 'center' }}>
                     <img
                       className="review_avatar"
                       src={
@@ -72,7 +73,12 @@ function ReviewCarousel() {
       <div id="header_production">
         <p>Отзывы о нашем магазине</p>
       </div>
-      <div>{review}</div>
+      <div>
+        <Swiper modules={[FreeMode]} freeMode={true}>
+          {review}
+        </Swiper>
+        
+        </div>
       <div id="review_button_div">
         <button class="leave_review">Оставить отзыв</button>
       </div>

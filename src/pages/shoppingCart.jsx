@@ -100,6 +100,7 @@ function ShoppingCart() {
           <p
             id="delete"
             onClick={() => {
+              window.GlobalShoppingCart = [];
               setCart("");
               setSummary("");
             }}
