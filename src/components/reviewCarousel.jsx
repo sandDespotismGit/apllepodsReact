@@ -1,13 +1,18 @@
-import { FreeMode } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ReactDOM } from "react";
+import { SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import user_def from "./../images/user.png";
 function ReviewCarousel() {
-  const [review, setReview] = useState("sBlyaaaaa");
+  const [review, setReview] = useState("");
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   useEffect(() => {
     fetch("https://pop.applepodsblack.ru/api/reviews?populate=deep")
       .then((response) => response.json())
@@ -28,11 +33,13 @@ function ReviewCarousel() {
               );
             }
           }
+          const date = new Date(elem.attributes.date);
+
           buffer.push(
             <SwiperSlide>
               <div className="review">
                 <div className="review_header">
-                  <div>
+                  <div style={{ display: "flex", flexDirection: "row" }}>
                     <img
                       className="review_avatar"
                       src={
@@ -42,9 +49,13 @@ function ReviewCarousel() {
                           : user_def
                       }
                     />
-                    <p className="review_name">{elem.attributes.name}</p>
+                    <div>
+                      <p className="review_name">{elem.attributes.name}</p>
+                      <p className="review_date">
+                        {date.toLocaleDateString("ru-RU", options)}
+                      </p>
+                    </div>
                   </div>
-                  <p className="review_date">{elem.attributes.date}</p>
                 </div>
                 <div className="review_images">{photo_buffer}</div>
                 <p className="review_comment">{elem.attributes.text}</p>
