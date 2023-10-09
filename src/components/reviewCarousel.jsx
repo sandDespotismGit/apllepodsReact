@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/free-mode";
-import user_def from './../images/user.png'
+import user_def from "./../images/user.png";
 function ReviewCarousel() {
   const [review, setReview] = useState("sBlyaaaaa");
   useEffect(() => {
@@ -18,27 +18,36 @@ function ReviewCarousel() {
 
         for (let elem of data) {
           console.log(elem.attributes.photo);
-          let photo_buffer = []
-          {for (let photo of elem.attributes.photo.data) {
-            photo_buffer.push(<img src={'https://pop.applepodsblack.ru/'+ photo.attributes.url}></img>)
-          }}
+          let photo_buffer = [];
+          {
+            for (let photo of elem.attributes.photo.data) {
+              photo_buffer.push(
+                <img
+                  src={"https://pop.applepodsblack.ru/" + photo.attributes.url}
+                ></img>
+              );
+            }
+          }
           buffer.push(
             <SwiperSlide>
-              <div>
-                <div className="review">
-                  <div className="review_header">
-                    <div>
-                      <img src={(elem.attributes.avatar.data != null) ? 'https://pop.applepodsblack.ru/' + elem.attributes.avatar.data.attributes.url : user_def}/>
-                      <p className="review_name">{elem.attributes.name}</p> 
-                    </div>
-                    <p className="review_date">{elem.attributes.date}</p>
+              <div className="review">
+                <div className="review_header">
+                  <div>
+                    <img
+                      className="review_avatar"
+                      src={
+                        elem.attributes.avatar.data != null
+                          ? "https://pop.applepodsblack.ru/" +
+                            elem.attributes.avatar.data.attributes.url
+                          : user_def
+                      }
+                    />
+                    <p className="review_name">{elem.attributes.name}</p>
                   </div>
-                  <div className="review_images">
-                    {photo_buffer}
-                  </div>
-                  
-                  <p className="review_comment">{elem.attributes.text}</p>
+                  <p className="review_date">{elem.attributes.date}</p>
                 </div>
+                <div className="review_images">{photo_buffer}</div>
+                <p className="review_comment">{elem.attributes.text}</p>
               </div>
             </SwiperSlide>
           );
@@ -52,9 +61,7 @@ function ReviewCarousel() {
       <div id="header_production">
         <p>Отзывы о нашем магазине</p>
       </div>
-      <Swiper slidesPerView={1} modules={[FreeMode]} freeMode={true}>
-        {review}
-      </Swiper>
+      <div>{review}</div>
       <div id="review_button_div">
         <button class="leave_review">Оставить отзыв</button>
       </div>
