@@ -977,6 +977,14 @@ h1 {
   padding: 10px;
 }
 
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  opacity: 0.5;
+  color: #666666;
+}
+
 .card_description {
   color: var(--White, #ececec);
 
