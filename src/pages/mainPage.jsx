@@ -6,11 +6,17 @@ import QuadroBlocks from "../components/QuadroBlocks.jsx";
 import OurProducts from "../components/ourProducts.jsx";
 import ReviewCarousel from "../components/reviewCarousel.jsx";
 import Products from "../components/products.jsx";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function MainPage() {
+  const [notification, setNotification] = useState('')
+  useEffect(()=> {
+    if (window.GlobalShoppingCart.length != 0) setNotification(<HeaderNotification/>)
+  })
   return (
     <div id="main">
-      <HeaderNotification />
+      {notification}
       <HeaderCarousel />
       <ProfileTgLink />
       <TeletypeCarousel />

@@ -3,6 +3,8 @@ import { FreeMode } from "swiper/modules";
 import { useEffect } from "react";
 import "swiper/css";
 import { useState } from "react";
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 function HeaderCarousel() {
   const [message, setMessage] = useState("sBlyaaaaa");
@@ -15,7 +17,7 @@ function HeaderCarousel() {
         for (let elem of data) {
           buffer.push(
             <SwiperSlide>
-              <div className="header_message">
+              <div className="header_message" style={{marginBottom:'28px'}}>
                 <div id="header_message_left">
                   <p id="manager_name">Артем</p>
                   <p id="manager_position">Менеджер</p>
@@ -32,7 +34,7 @@ function HeaderCarousel() {
   }, []);
   return (
     <div className="header_message_carousel">
-      <Swiper modules={[FreeMode]} freeMode={true}>
+      <Swiper modules={[FreeMode, Pagination]} freeMode={true} pagination={true} >
         {message}
       </Swiper>
     </div>

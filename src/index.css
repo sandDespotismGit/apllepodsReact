@@ -1365,3 +1365,6 @@ h1 {
   line-height: 18px; /* 138.462% */
   letter-spacing: -0.078px;
 }
+.swiper-pagination + .swiper-pagination-bullets + .swiper-pagination-horizontal{
+  bottom: -5px;
+}
