@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import user_def from "./../images/user.png";
 function ReviewCarousel() {
+  const tg = window.Telegram.WebApp;
   const [review, setReview] = useState("");
   const options = {
     weekday: "long",
@@ -80,7 +81,7 @@ function ReviewCarousel() {
         
         </div>
       <div id="review_button_div">
-        <button class="leave_review">Оставить отзыв</button>
+        <button class="leave_review" onClick={()=> tg.sendData('comment')}>Оставить отзыв</button>
       </div>
     </div>
   );

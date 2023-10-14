@@ -11,10 +11,9 @@ function ShoppingCart() {
   const backButton = tg.BackButton;
   const navigate = useNavigate();
   function back_page() {
-    if (window.notification) {
+    if (window.notification == true) {
       window.notification = false;
       navigate("/");
-      backButton.hide();
     } else {
       window.notification = false;
       navigate("/product");
@@ -22,6 +21,16 @@ function ShoppingCart() {
   }
   backButton.show();
   backButton.onClick(back_page);
+  const mainButton = tg.MainButton;
+  mainButton.text = "Оформить заказ";
+  mainButton.color = "#F5EA99";
+  mainButton.textColor = "#1C1C1E";
+  mainButton.show();
+  mainButton.onClick(() => {
+    window.GlobalSum = summary;
+    navigate("/order");
+    mainButton.hide();
+  });
   let sum_arr = [];
   let cart_arr = [];
   function deleteCard(ind, arr) {
@@ -113,13 +122,6 @@ function ShoppingCart() {
           <p>Итого</p>
           <p>{summary} ₽</p>
         </div>
-      </div>
-      <div style={{ padding: "16px" }}>
-        <Link to={"/order"} onClick={() => (window.GlobalSum = summary)}>
-          <button className="gold_button" style={{ width: "100%" }}>
-            Оформить заказ
-          </button>
-        </Link>
       </div>
     </div>
   );

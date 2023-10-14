@@ -1,4 +1,5 @@
 import selectEl from "../components/copy";
+import tutorial from "./../images/tutorial.MP4";
 function CopyPage() {
   const details = window.GlobalDetails;
   return (
@@ -12,13 +13,32 @@ function CopyPage() {
           нашему менеджеру.
         </p>
       </div>
-      <input id="details" defaultValue={window.GlobalDetails} className="gray_input"></input>
+      <input
+        id="details"
+        defaultValue={window.GlobalDetails}
+        className="gray_input"
+      ></input>
 
-      <a href="https://t.me/archimolotok" style={{ width: "100%", marginTop:'16px' }} onClick={selectEl}>
+      <a
+        href="https://t.me/archimolotok"
+        style={{ width: "100%", marginTop: "16px", marginBottom: "16px" }}
+        onClick={selectEl}
+      >
         <button className="gold_button" style={{ width: "100%" }}>
           Подтвердить
         </button>
       </a>
+      <p className="video_guide">Видео гайд</p>
+      <video
+        src={tutorial}
+        style={{
+          borderRadius: "16px",
+          border: "2px solid var(--Yellow-gradient, #f5ea99)",
+          height:'400px'
+        }}
+        preload="auto"
+        controls={true}
+      ></video>
     </div>
   );
 }

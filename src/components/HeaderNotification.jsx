@@ -9,7 +9,10 @@ function HeaderNotification() {
       </p>
       <div
         className="shopping_cart_icon"
-        onClick={() => navigate("/cart")}
+        onClick={() => {
+          window.notification = true;
+          navigate("/cart")}
+      }
       ></div>
     </div>
   );

@@ -44,7 +44,6 @@ function OformitPage() {
   const navigate = useNavigate();
   function back_page() {
     navigate("/cart");
-    backButton.hide();
   }
 
   backButton.show();
@@ -178,7 +177,7 @@ function OformitPage() {
                         ]);
                     }}
                   >
-                    <p>Почта РФ</p>
+                    <p>Международная почта</p>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -195,7 +194,7 @@ function OformitPage() {
                         ]);
                     }}
                   >
-                    <p>БелПочта</p>
+                    <p>Евро-почта</p>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -212,7 +211,7 @@ function OformitPage() {
                         ]);
                     }}
                   >
-                    <p>Международная доставка</p>
+                    <p>БелПочта</p>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -267,6 +266,10 @@ function OformitPage() {
             </Form>
           )}
         </Formik>
+      </div>
+      <div >
+        
+        <p id="caution">ОПЛАТА ЗАКАЗА ПРОИСХОДИТ ТОЛЬКО У МЕНЕДЖЕРА</p>
       </div>
     </div>
   );

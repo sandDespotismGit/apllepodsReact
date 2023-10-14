@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import "swiper/css";
 import { useState } from "react";
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { delay } from "lodash";
 
 function HeaderCarousel() {
   const [message, setMessage] = useState("sBlyaaaaa");
@@ -34,7 +35,7 @@ function HeaderCarousel() {
   }, []);
   return (
     <div className="header_message_carousel">
-      <Swiper modules={[FreeMode, Pagination]} freeMode={true} pagination={true} >
+      <Swiper modules={[FreeMode, Pagination, Autoplay]} freeMode={true} pagination={true} autoplay={{delay:3000, disableOnInteraction: false}}>
         {message}
       </Swiper>
     </div>

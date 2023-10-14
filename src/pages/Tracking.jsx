@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function Tracking() {
   const [tracking, setTracking] = useState("");
@@ -6,6 +7,14 @@ function Tracking() {
     console.log(e);
     alert(str);
   }
+  const tg = window.Telegram.WebApp;
+  const backButton = tg.BackButton;
+  const navigate = useNavigate()
+  backButton.show();
+  backButton.onClick(() => {
+    backButton.hide();
+    navigate('/');
+  });
   async function getTrack(trackNum, eventObj) {
     eventObj.preventDefault();
     const response = await fetch(

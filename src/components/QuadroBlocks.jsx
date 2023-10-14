@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function QuadroBlocks() {
   const [faqlink, setFaqLink] = useState("#");
   const navigate = useNavigate();
-  const [cart_amount, setAmount] = useState(0)
+  const [cart_amount, setAmount] = useState(0);
   useEffect(() => {
     fetch("https://pop.applepodsblack.ru/api/faqs")
       .then((response) => response.json())
@@ -16,9 +16,8 @@ function QuadroBlocks() {
       });
   }, []);
   useEffect(() => {
-
     setAmount(window.GlobalShoppingCart.length);
-  },)
+  });
   return (
     <div className="quadro_blocks_main">
       <div className="quadro_blocks" style={{ paddingLeft: "8px" }}>
@@ -97,7 +96,13 @@ function QuadroBlocks() {
             </div>
           </div>
         </a>
-        <div class="gray_block">
+        <div
+          class="gray_block"
+          onClick={() => {
+            window.notification = true;
+            navigate("/cart");
+          }}
+        >
           <div class="inner_arrow_text">
             <p>Корзина</p>
             <svg
@@ -115,7 +120,7 @@ function QuadroBlocks() {
               />
             </svg>
           </div>
-          <div id="cart_block_bottom" onClick={() => navigate("/cart")}>
+          <div id="cart_block_bottom">
             <div class="shopping_cart_icon"></div>
             <p id="cart_block_amount">{cart_amount}</p>
             <p class="sale">-5%</p>

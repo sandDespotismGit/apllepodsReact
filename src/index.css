@@ -31,8 +31,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .header_notification {
   display: flex;
@@ -242,7 +242,37 @@ h1 {
   border: 1px solid var(--Yellow-gradient, #f5ea99);
   padding: 8px;
 }
+.teletype_block_small {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid var(--Yellow-gradient, #f5ea99);
+  padding: 8px;
+  margin-bottom: 5px;
+}
+.teletype_block_small > div {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: url(product_example.png), lightgray 50%;
+  background-size: cover;
+  padding: 8px;
+}
+.teletype_block_small > div > p {
+  color: #fff;
 
+  /* Default/Bold/Subheadline */
+  font-family: SF Pro Text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: -0.5px;
+}
 .review_avatar {
   width: 50px;
   height: 50px;
@@ -982,6 +1012,7 @@ button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   opacity: 0.5;
+  width: 100%;
   color: #666666;
 }
 
@@ -1373,6 +1404,32 @@ button[disabled] {
   line-height: 18px; /* 138.462% */
   letter-spacing: -0.078px;
 }
-.swiper-pagination + .swiper-pagination-bullets + .swiper-pagination-horizontal{
+.swiper-pagination
+  + .swiper-pagination-bullets
+  + .swiper-pagination-horizontal {
   bottom: -5px;
+}
+#caution {
+  color: var(--White, #ececec);
+
+  /* Default/Regular/Headline */
+  font-family: SF Pro Text;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 129.412% */
+  letter-spacing: -0.408px;
+  text-align: center;
+}
+.video_guide {
+  color: var(--label-color-dark-primary, #fff);
+
+  /* Default/Bold/Subheadline */
+  font-family: SF Pro Text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
 }
