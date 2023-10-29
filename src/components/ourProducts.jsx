@@ -1,3 +1,4 @@
+import dyson from "./../images/dyson1.svg";
 function OurProducts() {
   return (
     <div>
@@ -229,6 +230,12 @@ function OurProducts() {
             </svg>
           </div>
           <p class="product_description_golden">Аксессуары</p>
+        </div>
+        <div class="product">
+          <div class="product_logo">
+            <img src={dyson}></img>
+          </div>
+          <p class="product_description_golden">Dyson</p>
         </div>
       </div>
     </div>

@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-
+import useWindowDimensions from "../components/GetDimensions";
+import cdek from "./../images/cdek.svg";
+import russian_post from "./../images/russianPost.svg";
+import apple from "./../images/gold_apple.svg";
 import { FormControl } from "@chakra-ui/react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 import { Formik, Form, Field } from "formik";
+import { useEffect } from "react";
 import * as yup from "yup";
 
 function OformitPage() {
@@ -16,6 +20,8 @@ function OformitPage() {
     "no_border",
     "no_border",
   ]);
+  const { height, width } = useWindowDimensions();
+  const [block, setBlock] = useState("cdek");
 
   const FormSchema = yup.object().shape({
     last_name: yup.string().required("Обязательное поле"),
@@ -33,7 +39,22 @@ function OformitPage() {
     let pochta = "сдэк";
     let name = values.adress;
     let result = "";
-    result = last_name + first_name + phone + pochta + name + window.GlobalSum;
+    let a = "";
+    for (let i = 0; i < window.GlobalProductColors.length; i++) {
+      a += `название ${window.GlobalCartNames[i]}  цвета ${window.GlobalProductColors[i]} \n`;
+    }
+    result = 
+`Здравствуйте , хочу сделать заказ! 
+Мои данные для заказа:
+ФИО: ${first_name} ${last_name}
+ТЕЛЕФОН: ${phone}
+АДРЕС: ${name}
+ДОСТАВКА: ${window.GlobalPost}
+СУММА: ${window.GlobalSum}
+ТОВАРЫ: 
+${a}
+
+Жду от вас обратной связи`;
     window.GlobalDetails = result;
     console.log(result);
     navigate("/copy");
@@ -56,6 +77,10 @@ function OformitPage() {
     pochta: "сдэк",
     adress: "",
   };
+  useEffect(() => {
+    if (width <= 410) setBlock("cdek_small");
+    else setBlock("cdek");
+  });
 
   return (
     <div id="oformit_main">
@@ -146,7 +171,7 @@ function OformitPage() {
               >
                 <SwiperSlide>
                   <div
-                    id="cdek"
+                    id={block}
                     className={border[0]}
                     onClick={() => {
                       console.log(border);
@@ -157,14 +182,19 @@ function OformitPage() {
                           "no_border",
                           "no_border",
                         ]);
+                      window.GlobalPost = "сдэк";
                     }}
                   >
                     <p>СДЭК</p>
+                    <img
+                      src={cdek}
+                      style={{ width: "90px", height: "30px" }}
+                    ></img>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div
-                    id="pochta"
+                    id={block}
                     className={border[1]}
                     onClick={() => {
                       console.log(border);
@@ -175,14 +205,19 @@ function OformitPage() {
                           "no_border",
                           "no_border",
                         ]);
+                      window.GlobalPost = "почта России";
                     }}
                   >
-                    <p>Международная почта</p>
+                    <p>Почта России</p>
+                    <img
+                      src={russian_post}
+                      style={{ width: "90px", height: "30px" }}
+                    ></img>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div
-                    id="cdek"
+                    id={block}
                     className={border[2]}
                     onClick={() => {
                       if (border[2] != "border")
@@ -192,26 +227,14 @@ function OformitPage() {
                           "border",
                           "no_border",
                         ]);
+                      window.GlobalPost = "почта по миру";
                     }}
                   >
-                    <p>Евро-почта</p>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    id="cdek"
-                    className={border[3]}
-                    onClick={() => {
-                      if (border[3] != "border")
-                        setBorder([
-                          "no_border",
-                          "no_border",
-                          "no_border",
-                          "border",
-                        ]);
-                    }}
-                  >
-                    <p>БелПочта</p>
+                    <p>Почта по миру</p>
+                    <img
+                      src={apple}
+                      style={{ width: "90px", height: "30px" }}
+                    ></img>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -267,8 +290,7 @@ function OformitPage() {
           )}
         </Formik>
       </div>
-      <div >
-        
+      <div>
         <p id="caution">ОПЛАТА ЗАКАЗА ПРОИСХОДИТ ТОЛЬКО У МЕНЕДЖЕРА</p>
       </div>
     </div>

@@ -9,49 +9,55 @@ import TrackingPage from "./pages/Tracking";
 import { ChakraBaseProvider } from "@chakra-ui/react";
 import { useEffect } from "react";
 window.GlobalShoppingCart = [];
+window.GlobalProductColors = [];
 const router = createMemoryRouter([
   {
     path: "/",
     element: <MainPage />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
     path: "/product",
     element: <ProductPage />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
     path: "/cart",
     element: <ShoppingCart />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
     path: "/order",
     element: <OrderPage />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
     path: "/tracking",
     element: <TrackingPage />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
     path: "/copy",
     element: <CopyPage />,
-    errorElement: <MainPage/>
+    errorElement: <MainPage />,
   },
   {
-    path: '/home',
-    element: <MainPage/>,
-    errorElement: <MainPage/>
-  }
+    path: "/home",
+    element: <MainPage />,
+    errorElement: <MainPage />,
+  },
 ]);
 function App() {
   const tg = window.Telegram.WebApp;
+  tg.enableClosingConfirmation();
   tg.expand();
   useEffect(() => {
-    if (!tg.isExpanded) tg.expand();
-  }, [tg.viewportHeight]);
+    if (!(tg.isExpanded)) tg.expand();
+  });
+  function big(){
+    tg.expand();
+  }
+  tg.onEvent('viewportChanged', big);
   return (
     <ChakraBaseProvider>
       <RouterProvider router={router} />

@@ -8,12 +8,20 @@ import user_def from "./../images/user.png";
 function ReviewCarousel() {
   const tg = window.Telegram.WebApp;
   const [review, setReview] = useState("");
+  const [swiper, setSwiper] = useState(null);
   const options = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   };
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (swiper) {
+  //       swiper.translateTo(-100, 200, false, false);
+  //     }
+  //   }, 1000)
+  // });
 
   useEffect(() => {
     fetch("https://pop.applepodsblack.ru/api/reviews?populate=deep")
@@ -75,7 +83,7 @@ function ReviewCarousel() {
         <p>Отзывы о нашем магазине</p>
       </div>
       <div>
-        <Swiper modules={[FreeMode]} freeMode={true}>
+        <Swiper modules={[FreeMode]} freeMode={true} onSwiper={(s)=> setSwiper(s)}>
           {review}
         </Swiper>
         

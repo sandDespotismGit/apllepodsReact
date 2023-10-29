@@ -13,11 +13,12 @@ function CopyPage() {
           нашему менеджеру.
         </p>
       </div>
-      <input
+      <textarea
         id="details"
         defaultValue={window.GlobalDetails}
         className="gray_input"
-      ></input>
+        style={{height:'auto', minHeight:'250px'}}
+      ></textarea>
 
       <a
         href="https://t.me/archimolotok"

@@ -1,19 +1,23 @@
-
+import default_icon from "./../images/User_icon.png";
 const tg = window.Telegram.WebApp;
 function ProfileTgLink() {
-  let first_name = 'Владимир';
-  let last_name = 'Путин';
-  let url = 'https://s0.rbk.ru/v6_top_pics/media/img/6/06/756563989353066.jpg'
-  if (tg.initDataUnsafe.user != undefined){
+  let first_name = "Владимир";
+  let last_name = "Путин";
+  let url =
+    "https://i.ytimg.com/vi/l5AXpKPABUk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGGUgWShOMA8=&rs=AOn4CLAdqZJrD4dW8p6PxeakjqaV_VM3Sg";
+  if (tg.initDataUnsafe.user != undefined) {
     first_name = tg.initDataUnsafe.user.first_name;
     last_name = tg.initDataUnsafe.user.last_name;
-    url  = tg.initDataUnsafe.user.photo_url;
+    url = tg.initDataUnsafe.user.photo_url;
   }
   return (
     <div id="profile_avatar_tgLink">
       <div id="inner_avatar_profile">
         <div id="profile_avatar">
-          <p>{first_name}  {last_name}</p>
+          <img src={default_icon} />
+          <p>
+            {first_name} {last_name}
+          </p>
         </div>
         <div id="tgLink">
           <a href="https://t.me/applepods_black">
